@@ -274,13 +274,14 @@
 
   .services-container {
     overflow-x: auto;
-    overflow-y: hidden;
+    overflow-y: visible;
     scroll-snap-type: x mandatory;
     scroll-padding: 0 2rem;
     margin-left: -2rem;
     margin-right: -2rem;
     padding-left: 2rem;
     padding-right: 2rem;
+    padding-bottom: 1rem;
     margin-bottom: 2rem;
     scroll-behavior: smooth;
   }
@@ -310,11 +311,16 @@
   }
 
   .service-card {
-    flex: 0 0 85vw;
-    max-width: 85vw;
+    flex: 0 0 calc(85vw - 1rem);
+    max-width: calc(85vw - 1rem);
     scroll-snap-align: start;
     scroll-snap-stop: always;
     padding: 1.5rem;
+    overflow: visible;
+  }
+
+  .service-card:hover {
+    transform: translateY(-5px);
   }
 
   .service-card.popular {
