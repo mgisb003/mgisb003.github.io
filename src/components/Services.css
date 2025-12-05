@@ -265,7 +265,6 @@
 @media (max-width: 768px) {
   .services {
     padding: 4rem 0;
-    overflow-x: hidden;
   }
 
   .section-title {
@@ -274,57 +273,54 @@
 
   .services-container {
     overflow-x: auto;
-    overflow-y: visible;
+    overflow-y: hidden;
     scroll-snap-type: x mandatory;
-    scroll-padding: 0 2rem;
-    margin-left: -2rem;
-    margin-right: -2rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    padding-bottom: 1rem;
-    margin-bottom: 2rem;
+    margin: 0 -1rem 3rem -1rem;
+    padding: 0 1rem;
     scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scroll-padding-left: calc(50vw - 45vw);
+    scroll-padding-right: calc(50vw - 45vw);
   }
 
   .services-container::-webkit-scrollbar {
-    height: 8px;
+    height: 6px;
   }
 
   .services-container::-webkit-scrollbar-track {
-    background: var(--bg-light);
-    border-radius: 10px;
+    background: transparent;
   }
 
   .services-container::-webkit-scrollbar-thumb {
     background: var(--primary-color);
-    border-radius: 10px;
-  }
-
-  .services-container::-webkit-scrollbar-thumb:hover {
-    background: var(--primary-dark);
+    border-radius: 3px;
   }
 
   .services-grid {
     display: flex;
-    gap: 1.5rem;
+    gap: 1rem;
     width: max-content;
+    padding: 0;
+    justify-content: center;
   }
 
   .service-card {
-    flex: 0 0 calc(85vw - 1rem);
-    max-width: calc(85vw - 1rem);
-    scroll-snap-align: start;
+    flex: 0 0 90vw;
+    max-width: 90vw;
+    scroll-snap-align: center;
     scroll-snap-stop: always;
-    padding: 1.5rem;
-    overflow: visible;
+    padding: 2rem 1.5rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
   }
 
   .service-card:hover {
-    transform: translateY(-5px);
+    transform: none;
   }
 
   .service-card.popular {
-    transform: scale(1);
+    transform: none;
   }
 
   .pricing-table {
@@ -333,12 +329,20 @@
   }
 
   .price-table {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
 
   .price-table th,
   .price-table td {
-    padding: 0.5rem;
+    padding: 0.5rem 0.25rem;
+  }
+
+  .service-name {
+    font-size: 1.5rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.95rem;
   }
 }
 
